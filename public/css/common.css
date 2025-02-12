@@ -1,0 +1,166 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+*{
+  font-family: "Roboto", sans-serif !important;
+
+}
+p,a{
+  font-size: 18px;
+  letter-spacing: 1.2px;
+}
+.navbar {
+      background-color: #333;
+    }
+
+    .navbar-brand {
+      color: #fff;
+    }
+
+    .navbar-nav .nav-link {
+      color: #fff;
+    }
+
+    .navbar-toggler-icon,
+    .search-icon {
+      color: #fff;
+      cursor: pointer;
+    }
+
+    /* Search input styles */
+    .search-input-container {
+      position: relative;
+    }
+
+    .search-input {
+      display: none;
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 0;
+      padding: 10px;
+      border: none;
+      border-bottom: 2px solid #fff;
+      background-color: transparent;
+      color: #fff;
+      transition: all 0.3s;
+    }
+
+    .search-input.active {
+      width: 200px; /* Adjust the width as needed */
+    }
+    .swiper {
+        width: 100%;
+        height: 100%;
+      }
+  
+      .swiper-slide {
+        text-align: center;
+        font-size: 18px;
+        background: #fff;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 600px;
+      }
+
+      .swiper-slide {
+        background-size: cover;
+        background-position: center;
+        display: flex;
+        align-items: center;
+        justify-content: start;
+        color: white;
+        font-size: 24px;
+    }
+
+    /* Optional: Add styles for pagination */
+    .swiper-pagination-bullet {
+        background-color: white;
+    }
+  
+      .swiper-slide img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+  
+      .swiper {
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .swiper-slide {
+        position: relative;
+    }
+
+    .swiper-slide:before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.5); /* Adjust the last parameter for the overlay opacity */
+        z-index: 1;
+    }
+
+    .slc {
+        position: relative;
+        z-index: 2;
+        color: #fff; /* Adjust text color to be visible on the dark overlay */
+        background: #00000080 !important;
+    padding: 20PX;
+    border-radius: 10px;
+    }
+    .swiper-button-next.swcol,
+    .swiper-button-prev.swcol {
+        background-color: #f8981d;
+        border-radius: 50%;
+        color: #fff;
+        width: 80px; /* Adjust width as needed */
+        height: 80px; /* Adjust height as needed */
+        display: flex;
+        align-items: end;
+        justify-content: center;
+        cursor: pointer;
+        line-height: 1.2 !important; /* Center the content vertically */
+    }
+    
+    .swiper-button-next.swcol::after,
+    .swiper-button-prev.swcol::after {
+        font-family: "swiper-icons"; /* Make sure to include Swiper's icon font */
+        font-size: 100px; /* Adjust font size as needed */
+    }
+    
+    .swiper-button-next.swcol::after {
+        content: '\203A'; /* Right-pointing angle bracket */
+    }
+    
+    .swiper-button-prev.swcol::after {
+        content: '\2039'; /* Left-pointing angle bracket */
+    }
+    .slc h3 {
+      margin-bottom:20px !important;
+  }
+  
+  
+  .btn-c{
+      background:#f8981d !important;
+      color:#fff !important;
+          padding:10px 20px !important;
+      border-radius:10px !important;
+  
+      
+      
+  }
+  
+  .btn-c:hover{
+      text-decoration:none !important;
+      background:#008fd5 !important;
+  }
+    @media(min-width:767px){
+      .slc{
+        margin-left: 100px !important;
+}
+      }
+    

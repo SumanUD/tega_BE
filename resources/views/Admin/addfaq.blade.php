@@ -1,0 +1,76 @@
+@extends('Admin.includes.main')
+@section('pageTitle', 'Add FAQ')
+@section('content')
+<div class="container col-md-10" style="  margin: auto;
+  width: 100%;
+  margin-left: 16.5%;
+  margin-top: 10px;
+  padding: 10px;">
+    <div class="alertmessage">
+        @if (session('success'))
+        <div class="alert alert-success" role="alert">
+            {{ session('success') }}
+        </div>
+        @endif
+        @if (session('error'))
+        <div class="alert alert-danger" role="alert">
+            {{ session('error') }}
+        </div>
+        @endif
+    </div>
+    <form method="POST" action="/admin/faq/store" enctype="multipart/form-data"
+        style="border: 2px solid #ddd; border-radius: 20px;">
+        @csrf
+        <div class="card-body">
+            <div class="form-group row">
+                <label class="col-4 col-form-label" for="text">Enter Question</label>
+                <div class="col-8">
+                    <input id="text" name="faq_question" type="text" class="form-control" required="required">
+                </div>
+            </div>
+            <div class="form-group row">
+                <label class="col-4 col-form-label" for="text">Enter Answer</label>
+                <div class="col-8">
+                    <input id="text" name="faq_answer" type="text" class="form-control" required="required">
+                </div>
+            </div>
+            <div class="form-group row">
+                <div class="offset-4 col-8 text-center">
+                    <button name="submit" type="submit" class="btn btn-primary">SUBMIT</button>
+                </div>
+            </div>
+        </div>
+        <!-- /.card-body -->
+    </form>
+
+    <div class="container" style="  margin: auto;
+    width: 100%;
+    margin-top:30px;
+    padding: 10px;">
+        <table class="table table-striped text-center" style="border: 2px solid #ddd !important;">
+            <thead>
+                <tr>
+                    <th>Sl No.</th>
+                    <th style="width:30%">Question</th>
+                    <th style="width:30%">Answer</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach ($faq as $faq)
+                <tr>
+                    <td>{{ $loop->index + 1 }}</td>
+                    <td>{{ $faq->faq_question }}</td>
+                    <td>{{ $faq->faq_answer }}</td>
+                    <td>
+                        <a href="/admin/faq/{{ $faq->slug }}/edit" class="btn btn-warning"><i
+                                class="fa-solid fa-pen"></i></a>
+                        <a href="{{ url('/admin/faq/' . $faq->slug . '/delete') }}" class="btn btn-danger"
+                            onClick="confirmation(event)"><i class="fa-solid fa-trash"></i></a>
+                    </td>
+                </tr>
+                @endforeach
+        </table>
+    </div>
+</div>
+@endsection
